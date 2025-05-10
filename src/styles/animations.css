@@ -1,0 +1,118 @@
+/* Custom animations and transitions for enhanced UI */
+
+@layer utilities {
+  /* Fade animations */
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-in-out;
+  }
+  
+  .animate-fade-out {
+    animation: fade-out 0.3s ease-in-out;
+  }
+  
+  /* Slide animations */
+  .animate-slide-in-right {
+    animation: slide-in-right 0.3s ease-in-out;
+  }
+  
+  .animate-slide-out-right {
+    animation: slide-out-right 0.3s ease-in-out;
+  }
+  
+  .animate-slide-in-left {
+    animation: slide-in-left 0.3s ease-in-out;
+  }
+  
+  .animate-slide-out-left {
+    animation: slide-out-left 0.3s ease-in-out;
+  }
+  
+  /* Scale animations */
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-in-out;
+  }
+  
+  .animate-scale-out {
+    animation: scale-out 0.3s ease-in-out;
+  }
+  
+  /* Hover animations */
+  .hover-lift {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+  
+  .hover-grow {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .hover-grow:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Pulse animation for attention */
+  .animate-pulse-custom {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slide-out-right {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes slide-in-left {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slide-out-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes scale-out {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(0.9); opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Skeleton loading animation */
+.skeleton-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
